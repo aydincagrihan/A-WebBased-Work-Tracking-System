@@ -2,7 +2,7 @@
   Summary
 </h1>
 <p align='center'>
-  Backend tarafında <b>ASP .NET CORE,EntityFramework,Katmanlı mimari,Frontend kısmında Bootstrap,CSS,HTML,JS</b> kullanılarak
+  Backend tarafında <b>ASP .NET CORE,C#,EntityFramework,Katmanlı mimari,Frontend kısmında Bootstrap,CSS,HTML,JS</b> kullanılarak
     Şirket içerisinde yöneticilerin kullanabileceği çalışanlara iş atayabildiği,çalışanların işler üzerinde dağılımını(iş üzerinde çalışan,iş bitiren gibi) fonksiyonları izleyebildiği,çalışanların kendilerine atanan işleri sistem üzerinde bildirim olarak alıp,çalıştıkları işlerle ilgili raporlar yazıp üstlerine bilgi verebildiği orta düzeyde bir iş takip sistemi 
     
 </p>
