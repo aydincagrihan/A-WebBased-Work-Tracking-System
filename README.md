@@ -14,10 +14,15 @@ Loglama için NLog paketi kullanıldı
 
 
 
-<p align='center'> Admin girişi ile sistemin yönetim kısmı </p>
+<h3>Admin girişi ile sisteme genel bakış </h3>
+
 
 ![5](https://user-images.githubusercontent.com/32998152/112166005-4c203580-8c00-11eb-9d18-fd49933fb004.gif)
 
 
+<h3> Kullanıcı girişi ile sisteme genel bakış </h3>
 
-![6](https://user-images.githubusercontent.com/32998152/112166605-d799c680-8c00-11eb-925f-d04c9e15aa17.gif)
+
+ ![6](https://user-images.githubusercontent.com/32998152/112166605-d799c680-8c00-11eb-925f-d04c9e15aa17.gif)
+
+
