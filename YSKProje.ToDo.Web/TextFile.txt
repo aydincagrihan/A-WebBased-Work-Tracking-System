@@ -1,0 +1,15 @@
+﻿İcon bilgileri 
+
+Kaydetme için : <i class="fas fa-check mr-2"></i>
+Ekleme için : <i class="fas fa-plus-circle mr-2"></i>
+Silme için :  <i class="fas fa-times-circle mr-2"></i>
+Düzenleme için : <i class="far fa-edit mr-2"></i>
+Onaylama için : <i class="fas fa-check mr-2"></i>
+GeriDön için :<i class="fas fa-chevron-circle-left mr-2"></i>
+
+
+Client Side Validation:
+@section JavaScript{
+    <script src="~/lib/jqueryValidate/jquery.validate.min.js"></script>
+    <script src="~/lib/jqueryUnob/jquery.validate.unobtrusive.min.js"></script>
+}

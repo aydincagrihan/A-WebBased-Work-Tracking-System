@@ -1,0 +1,21 @@
+﻿@model AciliyetAddDto
+@{
+    ViewData["Title"] = "EkleAciliyet";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form class="w-75 mx-auto p-3" method="post">
+    <div class="form-group">
+        <label asp-for="Tanim">Tanım :</label>
+        <span asp-validation-for="Tanim" class="text-danger"></span>
+        <input asp-for="Tanim" type="text" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-check mr-2"></i>Kaydet</button>
+</form>
+
+@section JavaScript{
+    <script src="~/lib/jqueryValidate/jquery.validate.min.js"></script>
+    <script src="~/lib/jqueryUnob/jquery.validate.unobtrusive.min.js"></script>
+}
+

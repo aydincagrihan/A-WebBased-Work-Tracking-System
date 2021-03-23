@@ -1,0 +1,76 @@
+﻿@model List<GorevListAllDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+    int index = 0;
+
+}
+
+
+@foreach (var gorev in Model)
+{
+    index++;
+    <div class="card my-1">
+        <h5 class="card-header">@gorev.Ad</h5>
+        <div class="card-body">
+            <h5 class="card-title"> <span class="text-danger">Aciliyet Durumu :</span> @gorev.Aciliyet.Tanim</h5>
+            <p class="card-text">@gorev.Aciklama</p>
+
+
+            <p class="text-right">
+                @if (gorev.Raporlar.Count > 0)
+                {
+                    <a class="btn btn-light btn-sm" data-toggle="collapse" href="#collapseExample-@index" role="button" aria-expanded="false" aria-controls="collapseExample">
+
+                        Raporlara Git <i class="fas fa-caret-down ml-2"></i>
+                        <span class="badge badge-dark">@gorev.Raporlar.Count</span>
+                    </a>
+                }
+
+            </p>
+            <div class="collapse" id="collapseExample-@index">
+
+                <table class="table table-hover table-bordered table-sm">
+                    <tr>
+                        <th>Tanım</th>
+                        <th>Detay</th>
+
+                    </tr>
+
+                    @foreach (var rapor in gorev.Raporlar)
+                    {
+                        <tr>
+                            <td>@rapor.Tanim</td>
+                            <td>@rapor.Detay</td>
+
+                        </tr>
+                    }
+
+
+
+                </table>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+}
+
+<nav aria-label="Page navigation example" class="float-right">
+    <ul class="pagination">
+
+        @for (int i = 1; i <= ViewBag.ToplamSayfa; i++)
+        {
+            <li class="page-item @(ViewBag.AktifSayfa==i?"active":"")">
+                <a class="page-link" asp-action="Index" asp-route-aktifSayfa="@i">@i</a>
+            </li>
+        }
+
+
+
+    </ul>
+</nav>

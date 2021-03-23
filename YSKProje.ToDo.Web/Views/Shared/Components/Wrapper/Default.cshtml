@@ -1,0 +1,62 @@
+﻿@model AppUserListDto
+
+@{
+    string active = string.Empty;
+    if (TempData["Active"] != null)
+    {
+        active = TempData["Active"].ToString();
+    }
+
+    //string active2 = TempData["Active"]?.ToString();
+}
+
+
+<div class="border border-right " id="sidebar-wrapper">
+    <div class="sidebar-heading">
+       
+        <img src="~/img/@Model.Picture" alt="@Model.Name" style="height:10rem!important;" class="w-100 img-thumbnail" />
+
+    </div>
+    <div class="list-group list-group-flush">
+
+        <a asp-action="Index" asp-controller="Home" class="list-group-item list-group-item-action  @(active=="anasayfa"?"active":"")">
+            <i class="fas fa-home mr-2"></i>
+            AnaSayfa
+        </a>
+
+
+        <a asp-action="Index" asp-controller="Gorev" class="list-group-item list-group-item-action @(active=="gorev"?"active":"")"><i class="fas fa-tasks mr-2"></i> Görev İşlemleri</a>
+        <a asp-action="Index" asp-controller="Aciliyet" class="list-group-item list-group-item-action  @(active=="aciliyet"?"active":"")">
+            <i class="fas fa-exclamation mr-2"></i>
+            Aciliyet İşlemleri
+        </a>
+        <a asp-action="Index" asp-controller="IsEmri" class="list-group-item list-group-item-action  @(active=="isemri"?"active":"")">
+            <i class="far fa-file mr-2"></i>
+            İş Emirleri
+        </a>
+        <a asp-action="Index" asp-controller="Grafik" class="list-group-item list-group-item-action  @(active=="grafik"?"active":"")">
+            <i class="fas fa-chart-pie mr-2"></i>
+            Grafikler
+        </a>
+
+
+        <a asp-action="Index" asp-controller="Bildirim" class="list-group-item list-group-item-action position-relative  @(active=="bildirim"?"active":"")">
+            <i class="far fa-bell  mr-2"></i>
+            @if (ViewBag.BildirimSayisi > 0)
+            {
+                <sub class="badge badge-info badge-pill position-absolute" style="bottom:0.625rem!important; left:1.7rem!important;"><small> @ViewBag.BildirimSayisi</small></sub>
+            }
+
+            Bildirimler
+        </a>
+
+        <a asp-action="Index" asp-controller="Profil" class="list-group-item list-group-item-action @(active=="profil"?"active":"")">
+            <i class="fas fa-user mr-2"></i>
+            Profilim
+        </a>
+        <a asp-area="" asp-action="CikisYap" asp-controller="Home" class="list-group-item list-group-item-action ">
+            <i class="fas fa-sign-out-alt mr-2"></i>
+            Çıkış Yap
+        </a>
+    </div>
+</div>

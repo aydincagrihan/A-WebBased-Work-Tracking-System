@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.0.4" />
+    <PackageReference Include="FastMember" Version="1.5.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.6.5" />
+    <PackageReference Include="NLog" Version="4.7.0" />
+    <PackageReference Include="NLog.Config" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YSKProje.ToDo.DataAccess\Agartha.ToDo.DataAccess.csproj" />
+    <ProjectReference Include="..\YSKProje.ToDo.DTO\Agartha.ToDo.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

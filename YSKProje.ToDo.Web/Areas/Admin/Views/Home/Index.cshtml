@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row mt-3">
+
+
+    <div class="col-md-6">
+        <div class="card text-white text-center bg-primary mb-3">
+
+
+
+            <div class="card-body">
+                <h4 class="card-title">Okunmamış Bildirim Sayısı</h4>
+
+                @if (ViewBag.OkunmamisBildirimSayisi > 0)
+                {
+                    <p class="card-text display-4">@ViewBag.OkunmamisBildirimSayisi</p>
+                    <p class="">
+                        <a asp-action="Index" asp-controller="Bildirim" class="btn btn-light btn-sm"><i class="fas fa-chevron-circle-right"></i> İncele</a>
+                    </p>
+                }
+                else
+                {
+                    <p class="card-text lead">
+                       Tüm bildirimleriniz okunmuş.
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-6">
+        <div class="card text-white text-center bg-primary mb-3">
+
+
+
+            <div class="card-body">
+                <h4 class="card-title">Atanma Bekleyen Görev Sayısı</h4>
+
+                @if (ViewBag.AtanmayiBekleyenGorevSayisi > 0)
+                {
+                    <p class="card-text display-4">@ViewBag.AtanmayiBekleyenGorevSayisi</p>
+                    <p class="">
+                        <a asp-action="Index" asp-controller="IsEmri" class="btn btn-light btn-sm"><i class="fas fa-chevron-circle-right"></i> İncele</a>
+                    </p>
+                }
+                else
+                {
+                    <p class="card-text lead">
+                        Bütün görevlerinizde personelleriniz çalışmakta ya da herhangi bir görev bulunmamakta.
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card text-white text-center bg-primary mb-3">
+
+            <div class="card-body">
+                <h4 class="card-title">Tamamlanmış Görev Sayısı</h4>
+
+                @if (ViewBag.TamamlanmisGorevSayisi > 0)
+                {
+                    <p class="card-text display-4">@ViewBag.TamamlanmisGorevSayisi</p>
+
+                }
+                else
+                {
+                    <p class="card-text lead">
+                        Herhangi bir görev henüz tamamlanmamış.
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-6">
+        <div class="card text-white text-center bg-primary mb-3">
+
+            <div class="card-body">
+                <h4 class="card-title">Yazılmış Rapor Sayısı</h4>
+
+                @if (ViewBag.ToplamRaporSayisi > 0)
+                {
+                    <p class="card-text display-4">@ViewBag.ToplamRaporSayisi</p>
+
+                }
+                else
+                {
+                    <p class="card-text lead">
+                        Hiçbir rapor yazılmamış.
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    @* ViewBag.OkunmamisBildirimSayisi*@
+</div>

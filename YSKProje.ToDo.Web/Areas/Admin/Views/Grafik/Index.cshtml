@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="piechart_3d" class="w-100" style=" height: 500px;"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="piechart" class="w-100" style=" height: 500px;"></div>
+
+        </div>
+
+    </div>
+
+
+
+@section JavaScript{
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            let enCokIsTamamlayan = [['Personel Adı', 'Görev Sayısı']];
+
+            $.ajax({
+                type: "Get",
+                url: "./Grafik/EnCokTamamlayan",
+                async: false,
+                success: function (data) {
+                    let gelenObje = jQuery.parseJSON(data);
+                    $.each(gelenObje, (index, value) => {
+                        enCokIsTamamlayan.push([value.Isim, value.GorevSayisi]);
+                    });
+                }
+            })
+
+
+
+            var data = google.visualization.arrayToDataTable(enCokIsTamamlayan);
+
+            var options = {
+                title: 'En Çok İş Tamamlayan 5 Personel'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart2);
+        function drawChart2() {
+            let enCokCalisan = [['Personel Adı', 'Görev Sayısı']];
+            $.ajax({
+                type: "Get",
+                url: "./Grafik/EnCokCalisan",
+                async: false,
+                success: function (data) {
+                    let gelenObje2 = jQuery.parseJSON(data);
+                    $.each(gelenObje2, (index, value) => {
+                        enCokCalisan.push([value.Isim, value.GorevSayisi]);
+                    });
+                }
+            });
+
+
+            var data = google.visualization.arrayToDataTable(enCokCalisan);
+
+            var options = {
+                title: 'Şuan Görevde Çalışan Personeller',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
+
+
+}
