@@ -7,7 +7,7 @@
     
 </p>
 <p>
-Kullanılan Metodlar:  veri doğruluğunu kontrol etmek için FluentValidation kütüphanesi kullanıldı,
+Kullanılan Kütüphaneler:  veri doğruluğunu kontrol etmek için FluentValidation kütüphanesi kullanıldı,
 AutoMapper oluşturulan modellerin dinamik bir şekilde eşleşmesi için kullanıldı
 Loglama için NLog paketi kullanıldı
 </p>
